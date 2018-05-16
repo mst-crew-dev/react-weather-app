@@ -38,7 +38,7 @@ Application use [APIXU Weather API](https://www.apixu.com/) service with FREE De
 ### Icons
 
 #### - For Weather condition 
-APIXU Api provides own icons for weather condition states, but ones are presented in PNG format and have small resolution. 
+APIXU Api provide own icons for weather condition states, but ones are presented in PNG format and have small resolution. 
 So [Weather Themed Icons Font](http://erikflowers.github.io/weather-icons/) was used and mapped with APIXU icon's codes.
 
 #### - For Actions
