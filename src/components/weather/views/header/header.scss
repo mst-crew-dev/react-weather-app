@@ -89,7 +89,7 @@
 }
 
 /* Medium and Small devices (phones & tablets) */
-@media only screen and (max-width: 992px) {
+@media (max-width: 992px) {
   .grid-header {
     grid-template-columns: 50% 50%;
     margin-bottom: 10px;

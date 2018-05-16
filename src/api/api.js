@@ -1,4 +1,5 @@
 import Icons from '../constants/icons'
+import DatesMap from '../constants/dates'
 
 /**
  * Apixu API
@@ -173,24 +174,24 @@ function getHistoryTemperature(hours, time) {
  * @returns {string}
  */
 function getLocalDate(localTime) {
-  const date = new Date(localTime);
-  const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
-  const month = date.toLocaleDateString('en-US', { month: 'long' });
-  const day = date.toLocaleDateString('en-US', { day: 'numeric' });
-  const dayPrefix = getDayPrefix(day);
-  const year = date.toLocaleDateString('en-US', { year: 'numeric' });
+  const localDate = new Date(localTime);
+  const weekday = DatesMap.dayNames[localDate.getDay()];
+  const month = DatesMap.monthNames[localDate.getMonth()];
+  const date = localDate.getDate();
+  const datePrefix = getDayPrefix(date);
+  const year = localDate.getFullYear();
 
-  return `${weekday}, ${month} ${day}${dayPrefix} ${year}`;
+  return `${weekday}, ${month} ${date}${datePrefix} ${year}`;
 }
 
 /**
- * Get Prefix for month's Day - 1st / 2nd / 7th ...
- * @day {number} month's Day number
+ * Get Prefix for month's date - 1st / 2nd / 7th ...
+ * @day {number} month's date number
  * @returns {string}
  */
-function getDayPrefix(day) {
-  if(day>3 && day<21) return 'th';
-  switch (day % 10) {
+function getDayPrefix(date) {
+  if(date>3 && date<21) return 'th';
+  switch (date % 10) {
     case 1:  return "st";
     case 2:  return "nd";
     case 3:  return "rd";
@@ -204,10 +205,10 @@ function getDayPrefix(day) {
  * @returns {string}
  */
 function getHistoryDate(localTime) {
-  const date = new Date(localTime);
-  const year = date.toLocaleDateString('en-US', { year: 'numeric' });
-  const day = date.toLocaleDateString('en-US', { day: '2-digit' });
-  const month = date.toLocaleDateString('en-US', { month: '2-digit' });
+  const localDate = new Date(localTime);
+  const year = localDate.getFullYear();
+  const date = ('0' + localDate.getDate()).slice(-2);
+  const month = ('0' + (localDate.getMonth() + 1)).slice(-2);
 
-  return `${year}-${month}-${day}`;
+  return `${year}-${month}-${date}`;
 }

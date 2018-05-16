@@ -6,10 +6,10 @@
   margin: 0;
   padding: 10px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: $dark-yellow;
-  background: -webkit-linear-gradient(to bottom, $dark-yellow, $light-yellow);
   background: linear-gradient(to bottom, $dark-yellow, $light-yellow);
 
   .container {
@@ -26,13 +26,21 @@
   }
 }
 
-/* Medium and Small devices (phones/tablets/laptops/desktops) */
-@media only screen and (max-width: 992px) {
+/* Medium and Small devices (phones & tablets) */
+@media (max-width: 992px) {
   #root {
     .container {
       width: 100%;
-      min-height: 600px;
       padding: 20px;
+    }
+  }
+}
+
+@media (max-height: 680px) {
+  #root {
+    .container {
+      min-height: 95%;
+      flex: 1 1 100%;
     }
   }
 }

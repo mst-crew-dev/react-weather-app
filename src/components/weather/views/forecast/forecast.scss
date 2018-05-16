@@ -19,7 +19,7 @@
 }
 
 /* Medium and Small devices (phones & tablets) */
-@media only screen and (max-width: 992px) {
+@media (max-width: 992px) {
   .grid-forecast {
     overflow-x: scroll;
     grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
