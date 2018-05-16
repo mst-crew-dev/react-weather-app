@@ -4,7 +4,7 @@
 ## Description
 Frontend React JS Application that represents API weather data.
 
-Live Demo [here](https://www.github.com/).
+Live Demo [here](https://mst-crew-dev.github.io/react-weather-app-build/).
 
 ### Main Features
 * Provide 7-days forecast starting from today;
