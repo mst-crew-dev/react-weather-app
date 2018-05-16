@@ -38,17 +38,16 @@ Application use [APIXU Weather API](https://www.apixu.com/) service with FREE De
 ### Icons
 
 #### - For Weather condition 
-APIXU Api provide own icons for weather condition states, but ones have small resolution and presented in PNG format. 
-So [Weather Themed Icons Font](http://erikflowers.github.io/weather-icons/) was used in app and mapped with APIXU icon's codes.
+APIXU Api provides own icons for weather condition states, but ones are presented in PNG format and have small resolution. 
+So [Weather Themed Icons Font](http://erikflowers.github.io/weather-icons/) was used and mapped with APIXU icon's codes.
 
 #### - For Actions
 For action buttons [material.io](https://material.io) icon's fonts was used.
 
 ### TODO List
 * Write Unit Tests;
-* Improve API History call to make loading faster;
-* Create nice errors handling;
-* Old browsers support.
+* Old browsers support;
+* Create nice errors handling.
 
 ## Getting Started
 Application is made with [React](https://reactjs.org/) and use [SASS](https://sass-lang.com/) grade CSS extension language.
