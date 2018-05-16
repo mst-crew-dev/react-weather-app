@@ -1,0 +1,84 @@
+@import "../../../../styles/variables";
+
+.grid-current {
+  display: grid;
+  justify-content: start;
+  grid-template-columns: auto auto auto;
+  margin-bottom: 30px;
+
+  > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .date {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    font-size: 2.5em;
+  }
+
+  .condition {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    font-size: 2em;
+  }
+
+  .temperature {
+    color: $pale-yellow;
+    font-size: 7em;
+  }
+
+  .icon {
+    justify-content: center;
+    color: $pale-yellow;
+    font-size: 8em;
+    margin: 0 50px;
+  }
+}
+
+/* Medium devices (tablets) */
+@media only screen and (max-width: 992px) {
+  .grid-current {
+    margin-bottom: 20px;
+
+    .temperature {
+      font-size: 5em;
+    }
+
+    .icon {
+      font-size: 6em;
+      margin: 0 30px;
+    }
+  }
+}
+
+
+/* Small devices (phones) */
+@media only screen and (max-width: 767px) {
+  .grid-current {
+    grid-template-columns: auto auto;
+    margin-bottom: 20px;
+
+    .date {
+      grid-column: 1 / span 2;
+      font-size: 2em;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .condition {
+      grid-column: 1 / span 2;
+      font-size: 1.5em;
+    }
+
+    .temperature {
+      font-size: 4em;
+    }
+
+    .icon {
+      font-size: 5em;
+      margin: 0;
+    }
+  }
+}

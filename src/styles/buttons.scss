@@ -1,0 +1,22 @@
+@import 'variables';
+
+.btn {
+  &-icon {
+    padding: 0;
+    border: none;
+    background: none;
+
+    .icon {
+      font-size: 36px;
+      color: $dusty-gray;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      .icon {
+        color: $dark-gray;
+      }
+    }
+  }
+}

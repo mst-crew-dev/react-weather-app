@@ -1,0 +1,53 @@
+@import '../../styles/variables';
+
+#location {
+  font-size: large;
+
+  .search-container {
+    position: relative;
+
+    .city {
+      text-align: center;
+      font-size: 2.5em;
+      border: none;
+      border-bottom: 2px solid $dusty-sand-gray;
+      outline: none;
+      color: $dusty-gray;
+      width: 100%;
+
+      &::-webkit-input-placeholder {
+        text-align: center;
+        font-weight: 500;
+        font-size: 1em;
+        color: $wild-sand;
+      }
+    }
+
+    #submit {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .geo-container {
+    p {
+      margin-top: 25px;
+      margin-bottom: 15px;
+      font-size: medium;
+    }
+
+    .current-position {
+      cursor: pointer;
+      border-bottom: 1px dotted;
+
+      &:hover,
+      &:active,
+      &:visited {
+        border-bottom: 1px solid;
+      }
+    }
+  }
+}

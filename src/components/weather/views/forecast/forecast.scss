@@ -1,0 +1,31 @@
+@import "../../../../styles/variables";
+
+.grid-forecast {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: auto auto auto auto auto auto auto;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+
+    .icon {
+      font-size: 2.5em;
+    }
+  }
+}
+
+/* Medium and Small devices (phones & tablets) */
+@media only screen and (max-width: 992px) {
+  .grid-forecast {
+    overflow-x: scroll;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
+
+    > div {
+      //width: 100px;
+    }
+  }
+}

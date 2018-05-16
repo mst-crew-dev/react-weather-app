@@ -1,0 +1,18 @@
+@import "../../../../styles/variables";
+
+.grid-history {
+  display: grid;
+  grid-template-columns: 120px auto;
+
+  > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: $sand-yellow;
+    font-size: 1.2em;
+  }
+
+  .temp {
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,107 @@
+@import "../../../../styles/variables";
+
+.grid-header {
+  display: grid;
+  grid-template-columns: 70px auto 90px;
+  margin-bottom: 40px;
+
+  > div {
+    display: flex;
+    align-items: center;
+  }
+
+  .back,
+  .title{
+    justify-content: flex-start;
+  }
+
+  .title {
+    font-size: 3em;
+    font-weight: bold;
+  }
+
+  .toggle {
+    justify-content: flex-end;
+
+    .switch {
+      position: relative;
+      height: 26px;
+      width: 87px;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 13px;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+
+      &-label {
+        position: relative;
+        z-index: 2;
+        float: left;
+        width: 43px;
+        line-height: 26px;
+        font-size: 11px;
+        color: $black;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+
+        &:active {
+          font-weight: bold;
+        }
+
+        &-left {
+          padding-left: 2px;
+        }
+
+        &-right {
+          padding-right: 2px;
+        }
+      }
+
+      &-input {
+        display: none;
+
+        &:checked {
+          + .switch-label {
+            color: $white;
+          }
+
+          + .switch-label-right ~ .switch-selection {
+            /* Note: left: 50% doesn't transition in WebKit */
+            left: 45px;
+          }
+        }
+      }
+
+      &-selection {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 2px;
+        left: 2px;
+        width: 40px;
+        height: 22px;
+        background: $white;
+        border-radius: 13px;
+        box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+        transition: left 0.15s ease-out;
+      }
+    }
+  }
+}
+
+/* Medium and Small devices (phones & tablets) */
+@media only screen and (max-width: 992px) {
+  .grid-header {
+    grid-template-columns: 50% 50%;
+    margin-bottom: 10px;
+
+    .back,
+    .toggle{
+      grid-row: 1;
+    }
+
+    .title {
+      grid-column: 1 / span 2;
+      grid-row: 2;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import 'variables';
+
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $dark-yellow;
+  background: -webkit-linear-gradient(to bottom, $dark-yellow, $light-yellow);
+  background: linear-gradient(to bottom, $dark-yellow, $light-yellow);
+
+  .container {
+    width: 920px;
+    height: auto;
+    min-height: 650px;
+    margin: auto;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    box-shadow: 0 0 2rem rgba($black, .5);
+  }
+}
+
+/* Medium and Small devices (phones/tablets/laptops/desktops) */
+@media only screen and (max-width: 992px) {
+  #root {
+    .container {
+      width: 100%;
+      min-height: 600px;
+      padding: 20px;
+    }
+  }
+}
