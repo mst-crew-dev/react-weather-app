@@ -77,7 +77,7 @@ async function mapForecastData({ location, current, forecast }){
   return {
     location: location.name,
     current: {
-      date: getLocalDate(location.localtime_epoch), // Date format: Sunday, May 18th 2018
+      date: getLocalDate(location.localtime), // Date format: Sunday, May 18th 2018
       temp_c: Math.round(current.temp_c), // current temperature C
       temp_f: Math.round(current.temp_f), // current temperature F
       condition: {
@@ -132,8 +132,8 @@ function getConditionIcon(isDay, code) {
  *   => @localtime {string} location local time
  * @returns {Promise<Object>}
  */
-async function getHistoryData({name, localtime_epoch}) {
-  const historyDate = getHistoryDate(localtime_epoch);
+async function getHistoryData({name, localtime}) {
+  const historyDate = getHistoryDate(localtime);
   const url = `${source}${history}?key=${key}&q=${encodeURIComponent(name)}&dt=${historyDate}`;
   return await httpGet(url);
 }
@@ -173,8 +173,8 @@ function getHistoryTemperature(hours, time) {
  * @localtime {string} param contains founded location local time (from getForecastData response)
  * @returns {string}
  */
-function getLocalDate(localTimeEpoch) {
-  const localDate = new Date(localTimeEpoch*1000); // convert unix time.
+function getLocalDate(localTime) {
+  const localDate = new Date(localTime.replace(/-/g, "/")); // set 'YYYY/MM/DD' format for new Date() support in safari
   const weekday = DatesMap.dayNames[localDate.getDay()];
   const month = DatesMap.monthNames[localDate.getMonth()];
   const date = localDate.getDate();
@@ -204,8 +204,8 @@ function getDayPrefix(date) {
  * @localtime {string} param contains founded location local time (from getForecastData response)
  * @returns {string}
  */
-function getHistoryDate(localTimeEpoch) {
-  const localDate = new Date(localTimeEpoch*1000); // convert unix time.
+function getHistoryDate(localTime) {
+  const localDate = new Date(localTime.replace(/-/g, "/")); // set 'YYYY/MM/DD' format for new Date() support in safari
   const year = localDate.getFullYear();
   const date = ('0' + localDate.getDate()).slice(-2);
   const month = ('0' + (localDate.getMonth() + 1)).slice(-2);
