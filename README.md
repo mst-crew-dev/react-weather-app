@@ -11,7 +11,9 @@ Live Demo [here](https://mst-crew-dev.github.io/react-weather-app-build/).
 * City can be selected by name or current geo-position;
 * User will be notified if geo-position is not supported by device or is Off on device;
 * User will be notified if city can't be located (API Error response);
-* In the history list temperature is shown for a daytime;
+* In the history list temperature is shown for a current daytime 
+(for example you are in Tallinn, and your time is 01:00 AM, Friday - you are looking for New York. 
+NY time at that moment is 02:00 PM, Thursday - you will see weather for current NY daytime and 7 days forecast starting from Thursday);
 * 'Current weather' section show temperature and icon depending on current daytime;
 * 'Scale type' control switch temperature from celsius to fahrenheit and vise versa;
 * App state will be restored if page will be reloaded (if any location was selected by name or geo-coordinates user will see saved forecast and data will be updated in bachground);
