@@ -99,7 +99,7 @@ function mapForecastDays(forecastDays) {
   return forecastDays.map(forecastDay => {
     const date = new Date(forecastDay.date);
     return {
-      name: date.toLocaleDateString('en-US', { weekday: 'long' }), // day name
+      name: DatesMap.dayNames[date.getDay()], // day name
       temp_c: Math.round(forecastDay.day.avgtemp_c), // average temperature C
       temp_f: Math.round(forecastDay.day.avgtemp_f), // average temperature F
       icon: getConditionIcon(true, forecastDay.day.condition.code), // condition icon
